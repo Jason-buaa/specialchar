@@ -18,7 +18,7 @@ async function insertUnicode() {
   const input = document.getElementById("unicodeInput").value.trim().toUpperCase();
 
   if (!input) {
-    alert("请输入 Unicode 码，例如 U+2103 或 2103");
+    showMessage("请输入 Unicode 码，例如 U+2103 或 2103");
     return;
   }
 
@@ -28,9 +28,10 @@ async function insertUnicode() {
   try {
     char = String.fromCodePoint(parseInt(hex, 16));
   } catch (e) {
-    alert("无效的 Unicode 码");
+    showMessage("请输入 Unicode 码，例如 U+2103 或 2103");
     return;
   }
+  showMessage("");
 
   await Excel.run(async (context) => {
     const range = context.workbook.getSelectedRange();
@@ -41,4 +42,10 @@ async function insertUnicode() {
     range.values = [[current + char]];
     await context.sync();
   });
+}
+
+function showMessage(msg, color="red") {
+  const el = document.getElementById("message");
+  el.style.color = color;
+  el.textContent = msg;
 }
