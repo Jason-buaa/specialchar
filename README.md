@@ -63,4 +63,4 @@ Did you experience any problems? [Create an issue](https://aka.ms/officedevkitne
 
 Want to learn more about new features and best practices for the Office platform? [Join the Microsoft Office Add-ins community call](https://learn.microsoft.com/office/dev/add-ins/overview/office-add-ins-community-call).
 
-Keep MS365 Alive.
+Keep MS365 Alive * 2.
